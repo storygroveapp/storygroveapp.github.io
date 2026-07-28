@@ -3,10 +3,110 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Story Grove</title>
+    <meta name="description" content="StoryGrove — бесплатный офлайн-менеджер кампаний для мастеров настольных ролевых игр.">
+    <meta name="theme-color" content="#0d1711">
+    <title>StoryGrove — вся ваша кампания в одном месте</title>
+    <link rel="icon" href="https://storygrove-api.duckdns.org/assets/site/brand/story-grove-logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Story Grove</h1>
-    <p>Бесплатный офлайн-менеджер кампаний для настольных ролевых игр.</p>
+    <a class="skip-link" href="#main" data-i18n="skip">Перейти к содержанию</a>
+
+    <header class="site-header">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+            <span class="sr-only" data-i18n="menu">Открыть меню</span>
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav id="main-navigation" class="main-nav" aria-label="Основная навигация">
+            <a href="#top" data-i18n="navDownload">Скачать</a>
+            <a href="#features" data-i18n="navFeatures">Возможности</a>
+            <a href="#privacy" data-i18n="navPrivacy">Приватность</a>
+            <a class="nav-support" href="https://boosty.to/storygrove/donate" rel="noopener noreferrer" data-track-event="boosty_click" data-i18n="navSupport">Поддержать</a>
+        </nav>
+
+        <div class="language-switcher" aria-label="Выбор языка">
+            <button class="language-button is-active" type="button" data-language="ru" aria-pressed="true">RU</button>
+            <span aria-hidden="true">/</span>
+            <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="top" class="hero section-shell">
+            <div class="hero-copy">
+                <p class="eyebrow" data-i18n="heroEyebrow">Независимый инструмент для мастера настольных RPG</p>
+                <div class="hero-title-row">
+                    <img class="brand-logo hero-logo" src="https://storygrove-api.duckdns.org/assets/site/brand/story-grove-logo.png" alt="" width="88" height="88">
+                    <h1><span>StoryGrove</span><small data-i18n="heroTitle">Ваша кампания всегда под рукой</small></h1>
+                </div>
+                <p class="hero-lead" data-i18n="heroText">Персонажи, локации, фракции, предметы, квесты и связи между ними — в одном приложении. Без регистрации и подключения к интернету.</p>
+                <div id="get-app" class="hero-actions">
+                    <a id="android-download" class="button button-primary is-disabled" href="#get-app" aria-disabled="true" data-i18n="downloadAndroid">Скачать для Android</a>
+                    <a class="text-link" href="https://boosty.to/storygrove/donate" rel="noopener noreferrer" data-track-event="boosty_click" data-i18n="supportProject">Поддержать проект</a>
+                </div>
+                <p id="android-release-note" class="release-note" data-i18n="releaseLoading">Проверяем доступную версию…</p>
+                <ul class="trust-list" aria-label="Преимущества">
+                    <li data-i18n="trustOffline">Работает офлайн</li>
+                    <li data-i18n="trustFree">Бесплатно</li>
+                    <li data-i18n="trustLocal">Данные на устройстве</li>
+                </ul>
+            </div>
+
+            <div class="hero-visual" aria-label="Экраны приложения StoryGrove">
+                <figure class="app-screen app-screen-back">
+                    <img src="https://storygrove-api.duckdns.org/assets/site/screens/characters.jpg" alt="Список персонажей StoryGrove" data-i18n-alt="altCharacters" width="576" height="1280">
+                </figure>
+                <figure class="app-screen app-screen-main">
+                    <img src="https://storygrove-api.duckdns.org/assets/site/screens/campaign.jpg" alt="Экран кампании StoryGrove" data-i18n-alt="altCampaign" width="576" height="1280">
+                </figure>
+                <figure class="app-screen app-screen-side">
+                    <img src="https://storygrove-api.duckdns.org/assets/site/screens/character.jpg" alt="Карточка персонажа StoryGrove" data-i18n-alt="altCharacter" width="576" height="1280">
+                </figure>
+            </div>
+        </section>
+
+        <section id="features" class="features section-shell section-spacing">
+            <div class="section-heading">
+                <h2 data-i18n="featuresEyebrow">Главное в StoryGrove</h2>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <h3 data-i18n="featureOneTitle">Организуйте мир</h3>
+                    <p data-i18n="featureOneText">Разделяйте материалы по кампаниям и держите персонажей, места, фракции, предметы и квесты рядом.</p>
+                </article>
+                <article class="feature-card">
+                    <h3 data-i18n="featureTwoTitle">Связывайте сущности</h3>
+                    <p data-i18n="featureTwoText">Сохраняйте отношения персонажей и быстро переходите между связанными элементами вашего мира.</p>
+                </article>
+                <article class="feature-card">
+                    <h3 data-i18n="featureThreeTitle">Работайте где угодно</h3>
+                    <p data-i18n="featureThreeText">Приложение не требует аккаунта или интернета. Подтверждённые изменения сохраняются локально.</p>
+                </article>
+            </div>
+            <ul class="detail-list" aria-label="Дополнительные возможности">
+                <li><span>⌕</span><strong data-i18n="detailSearch">Поиск по вашим записям</strong></li>
+                <li><span>⇅</span><strong data-i18n="detailTransfer">Импорт и экспорт кампаний</strong></li>
+                <li><span>А</span><strong data-i18n="detailLanguages">Русский и английский интерфейс</strong></li>
+                <li><span>±</span><strong data-i18n="detailText">Настройка размера текста</strong></li>
+                <li><span>∞</span><strong data-i18n="detailCampaigns">Несколько независимых кампаний</strong></li>
+                <li><span>◇</span><strong data-i18n="detailAds">Без рекламы и подписки</strong></li>
+            </ul>
+        </section>
+
+        <section id="privacy" class="privacy section-shell section-spacing">
+            <h2 class="privacy-heading" data-i18n="privacyEyebrow">Ваши истории остаются вашими</h2>
+            <div class="privacy-card">
+                <p><strong>StoryGrove</strong><span data-i18n="privacyText"> не отправляет содержимое ваших кампаний на сервер. Сайт может собирать только минимальную техническую статистику посещений и загрузок без рекламного профилирования.</span></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer section-shell">
+        <p>© 2026 StoryGrove. <span data-i18n="footerText">Все права защищены.</span></p>
+        <a href="mailto:storygroveapp@gmail.com">storygroveapp@gmail.com</a>
+    </footer>
 </body>
 </html>
