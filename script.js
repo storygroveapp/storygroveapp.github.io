@@ -1,6 +1,6 @@
 const translations = {
     ru: {
-        skip: "Перейти к содержанию", menu: "Открыть меню", navFeatures: "Возможности", navDownload: "Скачать", navPrivacy: "Приватность", navSupport: "Поддержать",
+        skip: "Перейти к содержанию", menu: "Открыть меню", mainNavigation: "Основная навигация", languageSwitcher: "Выбор языка", benefitsLabel: "Преимущества", screensLabel: "Экраны приложения StoryGrove", detailsLabel: "Дополнительные возможности", navFeatures: "Возможности", navDownload: "Скачать", navPrivacy: "Приватность", navSupport: "Поддержать",
         heroEyebrow: "Независимый инструмент для мастера настольных RPG", heroTitle: "Ваша кампания всегда под рукой", heroText: "Персонажи, локации, фракции, предметы, квесты и связи между ними — в одном приложении. Без регистрации и подключения к интернету.",
         downloadAndroid: "Скачать для Android", supportProject: "Поддержать проект", releaseLoading: "Проверяем доступную версию…", releasePending: "APK пока недоступен", releaseInfo: "Версия {version} · {size} · {requirements}", trustOffline: "Работает офлайн", trustFree: "Бесплатно", trustLocal: "Данные на устройстве",
         altCampaign: "Экран кампании StoryGrove", altCharacters: "Список персонажей StoryGrove", altCharacter: "Карточка персонажа StoryGrove",
@@ -14,7 +14,7 @@ const translations = {
         legendEyebrow: "Рабочая карта прототипа", legendTitle: "Что заменяем изображениями", legendMainTitle: "Бирюзовый", legendMainText: "главный экран для hero", legendSecondaryTitle: "Фиолетовый", legendSecondaryText: "один фоновый экран hero", legendGalleryTitle: "Синие и тёплые блоки", legendGalleryText: "три изображения галереи", footerText: "Все права защищены."
     },
     en: {
-        skip: "Skip to content", menu: "Open menu", navFeatures: "Features", navDownload: "Download", navPrivacy: "Privacy", navSupport: "Support",
+        skip: "Skip to content", menu: "Open menu", mainNavigation: "Main navigation", languageSwitcher: "Language selection", benefitsLabel: "Benefits", screensLabel: "StoryGrove app screens", detailsLabel: "Additional features", navFeatures: "Features", navDownload: "Download", navPrivacy: "Privacy", navSupport: "Support",
         heroEyebrow: "An independent tool for tabletop RPG game masters", heroTitle: "Your campaign, always close at hand", heroText: "Characters, locations, factions, items, quests, and their connections — in one app. No account or internet connection required.",
         downloadAndroid: "Download for Android", supportProject: "Support the project", releaseLoading: "Checking the available version…", releasePending: "The APK is not available yet", releaseInfo: "Version {version} · {size} · {requirements}", trustOffline: "Works offline", trustFree: "Free to use", trustLocal: "Data stays on device",
         altCampaign: "StoryGrove campaign screen", altCharacters: "StoryGrove character list", altCharacter: "StoryGrove character sheet",
@@ -110,6 +110,10 @@ function setLanguage(language) {
     document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
         const value = translations[selected][element.dataset.i18nAlt];
         if (value) element.setAttribute("alt", value);
+    });
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const value = translations[selected][element.dataset.i18nAriaLabel];
+        if (value) element.setAttribute("aria-label", value);
     });
     languageButtons.forEach((button) => {
         const active = button.dataset.language === selected;
