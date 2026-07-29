@@ -35,6 +35,18 @@ const navigation = document.querySelector(".main-nav");
 const downloadButton = document.querySelector("#android-download");
 const releaseNote = document.querySelector("#android-release-note");
 const apiBaseUrl = "https://storygrove-api.duckdns.org";
+const heroScreens = {
+    ru: {
+        left: `${apiBaseUrl}/assets/site/screens/screenshot-ru-left.jpg`,
+        center: `${apiBaseUrl}/assets/site/screens/screenshot-ru-center.jpg`,
+        right: `${apiBaseUrl}/assets/site/screens/screenshot-ru-right.jpg`
+    },
+    en: {
+        left: `${apiBaseUrl}/assets/site/screens/screenshot-en-left.jpg`,
+        center: `${apiBaseUrl}/assets/site/screens/screenshot-en-center.jpg`,
+        right: `${apiBaseUrl}/assets/site/screens/screenshot-en-right.jpg`
+    }
+};
 let currentLanguage = "ru";
 let androidRelease = null;
 let releaseLoaded = false;
@@ -114,6 +126,9 @@ function setLanguage(language) {
     document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
         const value = translations[selected][element.dataset.i18nAriaLabel];
         if (value) element.setAttribute("aria-label", value);
+    });
+    document.querySelectorAll("[data-screen-position]").forEach((image) => {
+        image.src = heroScreens[selected][image.dataset.screenPosition];
     });
     languageButtons.forEach((button) => {
         const active = button.dataset.language === selected;
